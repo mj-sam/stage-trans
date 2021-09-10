@@ -59,7 +59,7 @@ def standard_training(
 
         Return:	A trained tensorflow Model 
 	'''
-    model.compile(loss, optimizer)
+    model.compile(loss=loss, optimizer=optimizer)
     model.fit(x=train_data, y=train_lbl, 
                 batch_size=16, epochs=epochs[0], verbose= False, 
                 callbacks=callback,
