@@ -27,25 +27,22 @@ optional arguments:
                         lower cut-off frequency in proprocessing
   --frequency_cut_high FREQUENCY_CUT_HIGH
                         higher cut-off frequency in proprocessing
-  --cross_subject CROSS_SUBJECT
-                        model will be pre-trained on all subjects of the data
-                        set
   --subject SUBJECT     target subject
-  --stage STAGE         if true stage training will be used instead of
-                        standard training
-  --iterations ITERATIONS
   --k_fold K_FOLD
+  --iterations ITERATIONS
   --fine_tune_epochs FINE_TUNE_EPOCHS
   --save_model SAVE_MODEL
                         if true cross trained model wont be deleted after
                         execution
-
-
+  --stage               if true stage training will be used instead of
+                        standard training
+  --cross_subject       model will be pre-trained on all subjects of the data
+                        set
 ```
 
--Enable stage training (enabled by default)
+-Enable stage training
 ```
-python main.py --subject 1 --patience 50 --iterations 5 --epochs 500 --fine_tune_epochs 100 --stage True
+python main.py --subject 1 --patience 50 --iterations 5 --epochs 500 --fine_tune_epochs 100 --stage --cross_subject
 -------------------  ------------------
 Model                EEGNet
 Stage training       Enable
@@ -57,13 +54,13 @@ Accuracy             0.79679
 -------------------  ------------------
 ```
 
--Disable stage training
+-Disable stage training (default)
 ```
-python main.py --subject 1 --patience 50 --iterations 5 --epochs 500 --fine_tune_epochs 100 --stage False
+python main.py --subject 1 --patience 50 --iterations 5 --epochs 500 --fine_tune_epochs 100 
 -------------------  ------------------
 Model                EEGNet
 Stage training       Disable
-Cross Subjects       Enable
+Cross Subjects       Disable
 Training Epochs      500
 Training Iterations  5
 K_Fold               Enable
