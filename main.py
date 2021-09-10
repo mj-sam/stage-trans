@@ -108,17 +108,19 @@ if __name__ == "__main__":
                     help="lower cut-off frequency in proprocessing")
     parser.add_argument('--frequency_cut_high', action="store", dest="frequency_cut_high", type = float, default=40,
                     help="higher cut-off frequency in proprocessing")
-    parser.add_argument('--cross_subject'     , action="store", dest="cross_subject", type = bool, default=True,
-                    help="model will be pre-trained on all subjects of the data set")
     parser.add_argument('--subject' , action="store", dest="subject", type = int, default= 0,
                     help="target subject")
-    parser.add_argument('--stage' , action="store", dest="stage", type = bool, default=True,
-                    help="if true stage training will be used instead of standard training")
-    parser.add_argument('--iterations' , action="store", dest="iterations", type = int, default=1)
     parser.add_argument('--k_fold', action="store", dest="k_fold", type = bool,default=True )
+    parser.add_argument('--iterations' , action="store", dest="iterations", type = int, default=1)
     parser.add_argument('--fine_tune_epochs', action="store", dest="fine_tune_epochs", type = int,default=1 )
     parser.add_argument('--save_model', action="store", dest="save_model", type = int,default=1 ,
                     help="if true cross trained model wont be deleted after execution")
+    
+    parser.add_argument('--stage' , action="store_true", dest="stage", default = False,
+                    help="if true stage training will be used instead of standard training")
+    parser.add_argument('--cross_subject' , action="store_true", dest="cross_subject", default = False,
+                    help="model will be pre-trained on all subjects of the data set")
+
     
     args = parser.parse_args()
     #print(args)
