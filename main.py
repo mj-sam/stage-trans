@@ -120,7 +120,6 @@ if __name__ == "__main__":
                     help="if true stage training will be used instead of standard training")
     parser.add_argument('--cross_subject' , action="store_true", dest="cross_subject", default = False,
                     help="model will be pre-trained on all subjects of the data set")
-
     
     args = parser.parse_args()
     #print(args)
