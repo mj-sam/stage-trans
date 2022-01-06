@@ -72,4 +72,4 @@ Accuracy             0.7523131672597865
 
 # Authors
 - Javad Sameri        sameryq@gmail.com
-- Hesam Zarooshan     hesam_zarooshan@comp.iust.ac.ir 
+- Hesaam Zarooshan    hesaam.zarooshan@gmail.com 
